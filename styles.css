@@ -510,3 +510,54 @@ body {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
 }
+
+
+/* ===== Enhanced Nav Styles ===== */
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    text-decoration: none;
+    margin-right: 2rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.auth-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.auth-links a {
+    display: inline-block;
+    padding: 0.6rem 1.2rem;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 25px;
+}
