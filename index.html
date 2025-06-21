@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARS Won't Define Me - One Patient's Real Story</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(0,0,0,0.8);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .neon-green {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+        }
+
+        .neon-red {
+            color: #ff073a;
+            text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+        }
+            font-size: 3.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            color: #ff6b6b;
+        }
+
+        .rebel-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            color: #ffeaa7;
+        }
+
+        .manifesto-box {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 2px solid #ff6b6b;
+            border-radius: 15px;
+            padding: 2rem;
+            margin: 2rem auto;
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .manifesto-box h3 {
+            color: #ff6b6b;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .fight-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .fight-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 107, 0.6);
+        }
+
+        nav {
+            background: rgba(255,255,255,0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+            position: relative;
+        }
+
+        .auth-links {
+            position: absolute;
+            right: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-links a {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .auth-links a:hover {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .auth-links a.signup {
+            background: linear-gradient(45deg, #39ff14, #32d812);
+            color: #333;
+        }
+
+        .auth-links a.signup:hover {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            transition: all 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            background: #ff6b6b;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        main {
+            background: white;
+            min-height: 100vh;
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .disclaimer {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        .page-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .rebel-post {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            border-left: 6px solid #ff6b6b;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .rebel-post::before {
+            content: "💪";
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 2rem;
+            opacity: 0.3;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .rebel-badge {
+            background: #ff6b6b;
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: bold;
+        }
+
+        .post-title {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 1rem;
+            font-weight: bold;
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .post-content h3 {
+            color: #ff6b6b;
+            margin: 2rem 0 1rem 0;
+            font-size: 1.4rem;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content ul {
+            margin: 1rem 0;
+            padding-left: 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.8rem;
+        }
+
+        .fight-highlight {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .fight-highlight h4 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .rebel-tracker {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .tracker-form {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: white;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 10px;
+            font-size: 1rem;
+            background: rgba(255,255,255,0.9);
+        }
+
+        .rebel-scale {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .rebel-option {
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            flex: 1;
+            min-width: 120px;
+        }
+
+        .rebel-option:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-2px);
+        }
+
+        .rebel-option input[type="radio"] {
+            width: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .rebel-emoji {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid #ff6b6b;
+            transition: transform 0.3s;
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .resource-card h3 {
+            color: #ff6b6b;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .resource-card a {
+            color: #667eea;
+            text-decoration: none;
+            display: block;
+            margin: 0.5rem 0;
+            font-weight: 500;
+        }
+
+        .resource-card a:hover {
+            color: #ff6b6b;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .rebel-quote {
+            font-style: italic;
+            font-size: 1.2rem;
+            color: #ff6b6b;
+            text-align: center;
+            margin: 2rem 0;
+            padding: 1rem;
+            border-left: 4px solid #ff6b6b;
+            background: #f8f9fa;
+        }
+
+            @media (max-width: 768px) {
+            .rebel-title {
+                font-size: 2.5rem;
+            }
+            
+            .nav-links {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .auth-links {
+                position: static;
+                justify-content: center;
+                margin-top: 1rem;
+            }
+            
+            .rebel-scale {
+                flex-direction: column;
+            }
+            
+            .manifesto-box {
+                margin: 1rem;
+                padding: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="rebel-title"><span class="neon-red">LARS</span> <span class="neon-green">Won't</span> Define Me</h1>
+                <p class="rebel-subtitle">My real story and how I used data science and AI to fight back</p>
+                
+                <div class="manifesto-box">
+                    <h3>My Personal Mission</h3>
+                    <p>✊ I share my real experiences living with LARS</p>
+                    <p>🔥 I document my daily fight to improve my quality of life</p>
+                    <p>💪 I share honest strategies, failures, and small victories</p>
+                    <p>🚀 I show that improvement is possible through personal experience</p>
+                    <p>👥 I connect with other patients on similar journeys</p>
+                </div>
+                
+                <button class="fight-button" onclick="showPage('community')">JOIN THE COMMUNITY</button>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#" onclick="showPage('home')" class="active">My Story</a></li>
+                <li><a href="#" onclick="showPage('blog')">Daily Journey</a></li>
+                <li><a href="#" onclick="showPage('tracker')">Personal Tracker</a></li>
+                <li><a href="#" onclick="showPage('resources')">Helpful Resources</a></li>
+                <li><a href="#" onclick="showPage('about')">About Me</a></li>
+                <li><a href="#" onclick="showPage('community')">Community</a></li>
+                
+                <div class="auth-links">
+                    <a href="#" onclick="showSignup()" class="signup">Sign Up</a>
+                    <a href="#" onclick="showLogin()" class="login">Log In</a>
+                </div>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+
+            <!-- Home Page -->
+            <div id="home-page" class="content-section">
+                <div class="page-content">
+                    <h1>LARS Won't Define Me</h1>
+                    <p>A year ago, doctors told me I had Low Anterior Resection Syndrome and that I'd need to "learn to live with it." This is my personal story of how I'm working to improve my quality of life.</p>
+                    
+                    <p>I want to share my real experiences - the challenges, the small victories, and what I'm learning along the way. This is my personal journey, not medical advice.</p>
+
+                    <div class="rebel-quote">
+                        "They told me LARS would be my new normal. I'm proving there's more to my story."
+                    </div>
+
+                    <div class="fight-highlight">
+                        <h4>What You'll Find in My Story:</h4>
+                        <p><strong>Honest Experiences:</strong> Real daily life with LARS<br>
+                        <strong>Personal Strategies:</strong> What works for me (your experience may differ)<br>
+                        <strong>Learning Moments:</strong> When things don't go as planned<br>
+                        <strong>Small Victories:</strong> Progress I've personally experienced<br>
+                        <strong>Helpful Resources:</strong> Information that I've found useful</p>
+                    </div>
+
+                    <h2>Latest from My Journey</h2>
+                    <div class="rebel-post">
+                        <div class="post-meta">
+                            <span class="rebel-badge">Day 365 Journey</span>
+                            <span>December 20, 2024</span>
+                        </div>
+                        <h3 class="post-title">One Year Later: My Personal Progress Report</h3>
+                        <div class="post-content">
+                            <p>365 days ago, I started this journey. Here's my honest review of Year One living with LARS...</p>
+                            <p><em>Continue reading in <a href="#" onclick="showPage('blog')" style="color: #ff6b6b; font-weight: bold;">Daily Journey</a></em></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Blog Page -->
+            <div id="blog-page" class="content-section hidden">
+                <div class="page-content">
+                    <h1>My Daily Fight Against LARS</h1>
+                    <p>These are real battle reports from the front lines. Some days I win, some days LARS wins. But I never stop fighting.</p>
+
+                    <div class="rebel-post">
+                        <div class="post-meta">
+                            <span class="rebel-badge">Day 365 Rebellion</span>
+                            <span>December 20, 2024</span>
+                        </div>
+                        <h3 class="post-title">One Year of Fighting: The Honest Battle Report</h3>
+                        <div class="post-content">
+                            <p>365 days ago, I declared war on LARS. Today marks one year of rebellion, and I'm not backing down.</p>
+                            
+                            <h3>The Battle Statistics</h3>
+                            <ul>
+                                <li><strong>Months 1-3:</strong> Getting my ass kicked daily. LARS was winning big time.</li>
+                                <li><strong>Months 4-6:</strong> Started landing some punches. Tiny victories, but victories.</li>
+                                <li><strong>Months 7-9:</strong> Building my arsenal. Learning what weapons work.</li>
+                                <li><strong>Months 10-12:</strong> Taking back territory. LARS still fights dirty, but I'm stronger.</li>
+                            </ul>
+
+                            <h3>What I've Reclaimed</h3>
+                            <p>My urgency episodes dropped from 8-10 daily battles to 3-4. I can plan 2-3 hour missions outside my base now. The fear of eating out has mostly retreated.</p>
+
+                            <h3>Where I'm Still Fighting</h3>
+                            <p>Clustering still ambushes me. Some foods remain enemy territory. The mental exhaustion of constant tactical planning is real.</p>
+
+                            <div class="fight-highlight">
+                                <h4>To Every LARS Warrior Reading This:</h4>
+                                <p>Don't you dare give up. Don't let them tell you to "just accept it." You have more fight in you than you know. Join my rebellion. We're taking our lives back, one battle at a time.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="rebel-post">
+                        <div class="post-meta">
+                            <span class="rebel-badge">Day 360 Rebellion</span>
+                            <span>December 15, 2024</span>
+                        </div>
+                        <h3 class="post-title">My Rebel Arsenal: Weapons That Actually Work</h3>
+                        <div class="post-content">
+                            <p>After 360 days of combat, here's my tested battle kit - the weapons that help me fight LARS every day:</p>
+
+                            <h3>Daily Combat Gear</h3>
+                            <ul>
+                                <li><strong>Emergency assault pack:</strong> Crossbody bag with wet wipes, backup underwear, tactical plastic bags</li>
+                                <li><strong>Intelligence app:</strong> "Flush" app for bathroom reconnaissance</li>
+                                <li><strong>Hydration system:</strong> Electrolyte water - keeps my systems running</li>
+                                <li><strong>Food intel:</strong> Phone notes tracking enemy foods vs. allies</li>
+                            </ul>
+
+                            <h3>Vehicle Command Center</h3>
+                            <ul>
+                                <li>Complete uniform change in stealth bag</li>
+                                <li>Cleanup and recovery supplies</li>
+                                <li>Morale-boosting snacks (tested safe foods)</li>
+                                <li>Tactical air freshener for emergency situations</li>
+                            </ul>
+
+                            <h3>Failed Weapons (Don't Waste Your Money)</h3>
+                            <p>Expensive "miracle" underwear (regular cotton works fine), complicated tracking apps (simple phone notes work better), and most supplements (real food and hydration beat pills).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tracker Page -->
+            <div id="tracker-page" class="content-section hidden">
+                <div class="rebel-tracker">
+                    <h1>Battle Tracker - Know Your Enemy</h1>
+                    <p>Track your daily battles to identify patterns and build your winning strategy. This intel is for YOUR fight only.</p>
+
+                    <div class="tracker-form">
+                        <h3>Daily Battle Report</h3>
+                        <form id="rebel-tracker">
+                            <div class="form-group">
+                                <label>Mission Date:</label>
+                                <input type="date" id="battle-date" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Battle Status Today:</label>
+                                <div class="rebel-scale">
+                                    <div class="rebel-option">
+                                        <span class="rebel-emoji">😤</span>
+                                        <input type="radio" name="battle-status" value="1" id="battle1">
+                                        <label for="battle1">LARS kicked my ass</label>
+                                    </div>
+                                    <div class="rebel-option">
+                                        <span class="rebel-emoji">😠</span>
+                                        <input type="radio" name="battle-status" value="2" id="battle2">
+                                        <label for="battle2">Tough fight</label>
+                                    </div>
+                                    <div class="rebel-option">
+                                        <span class="rebel-emoji">😐</span>
+                                        <input type="radio" name="battle-status" value="3" id="battle3">
+                                        <label for="battle3">Draw</label>
+                                    </div>
+                                    <div class="rebel-option">
+                                        <span class="rebel-emoji">😏</span>
+                                        <input type="radio" name="battle-status" value="4" id="battle4">
+                                        <label for="battle4">I won some rounds</label>
+                                    </div>
+                                    <div class="rebel-option">
+                                        <span class="rebel-emoji">💪</span>
+                                        <input type="radio" name="battle-status" value="5" id="battle5">
+                                        <label for="battle5">I dominated</label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Energy for the Fight (1-5):</label>
+                                <select name="energy" required>
+                                    <option value="">Select...</option>
+                                    <option value="1">Completely drained</option>
+                                    <option value="2">Low energy</option>
+                                    <option value="3">Moderate</option>
+                                    <option value="4">Good energy</option>
+                                    <option value="5">Full power</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Today's Victories (small or big):</label>
+                                <textarea name="victories" placeholder="What battles did you win today? Made it through a meeting? Tried a new food? Laughed at something?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Enemy Tactics (what LARS threw at you):</label>
+                                <textarea name="enemy-tactics" placeholder="What challenges did LARS hit you with today? Urgency attacks? Clustering? Emotional warfare?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Intelligence Notes:</label>
+                                <textarea name="intel" placeholder="What did you learn about your enemy today? Triggers to avoid? Strategies that worked?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Mission Type (select all that apply):</label>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin-top: 10px;">
+                                    <label style="color: white;"><input type="checkbox" name="mission-type" value="social"> Social ops</label>
+                                    <label style="color: white;"><input type="checkbox" name="mission-type" value="work"> Work mission</label>
+                                    <label style="color: white;"><input type="checkbox" name="mission-type" value="travel"> Travel op</label>
+                                    <label style="color: white;"><input type="checkbox" name="mission-type" value="medical"> Medical recon</label>
+                                    <label style="color: white;"><input type="checkbox" name="mission-type" value="food"> Food testing</label>
+                                    <label style="color: white;"><input type="checkbox" name="mission-type" value="emotional"> Mental warfare</label>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="fight-button">LOG BATTLE REPORT</button>
+                        </form>
+
+                        <div class="fight-highlight" style="margin-top: 2rem;">
+                            <h4>Remember, Rebel:</h4>
+                            <p>This intel is for YOUR fight strategy only. Use it to spot patterns, prepare for doctor briefings, and plan your next moves. Every data point helps you fight smarter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resources Page -->
+            <div id="resources-page" class="content-section hidden">
+                <div class="page-content">
+                    <h1>Weapons & Tools for Fellow Rebels</h1>
+                    <p>These are the resources, tools, and intel sources that help me fight LARS. Not sponsored - just battle-tested gear.</p>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>🏥 Medical Command Centers</h3>
+                            <a href="https://www.fascrs.org" target="_blank">American Society of Colon and Rectal Surgeons</a>
+                            <a href="https://www.ccalliance.org" target="_blank">Colorectal Cancer Alliance</a>
+                            <a href="https://www.ostomy.org" target="_blank">United Ostomy Associations</a>
+                            <a href="https://www.cancer.gov" target="_blank">National Cancer Institute</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📚 Battle Manuals</h3>
+                            <a href="#" target="_blank">"Radical Remission" by Kelly Turner</a>
+                            <a href="#" target="_blank">"The Resilience Factor" by Reivich & Shatte</a>
+                            <a href="#" target="_blank">"Anticancer" by David Servan-Schreiber</a>
+                            <p><em>Amazon affiliate links - supports this rebellion</em></p>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>👥 Fellow Rebels</h3>
+                            <a href="#" target="_blank">LARS Warriors (Facebook)</a>
+                            <a href="#" target="_blank">Colorectal Cancer Fighters (Reddit)</a>
+                            <a href="#" target="_blank">Smart Patients Community</a>
+                            <a href="#" target="_blank">CancerCare Support Groups</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🔬 Intelligence Sources</h3>
+                            <a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank">PubMed (search "LARS syndrome")</a>
+                            <a href="#" target="_blank">Latest LARS Research Updates</a>
+                            <a href="#" target="_blank">Clinical Trial Intelligence</a>
+                            <p><em>Always discuss intel with your medical team</em></p>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🛠️ Combat Tools</h3>
+                            <a href="#" target="_blank">Flush App (bathroom intel)</a>
+                            <a href="#" target="_blank">Sit or Squat App</a>
+                            <a href="#" target="_blank">MyFitnessPal (food tracking)</a>
+                            <a href="#" target="_blank">Headspace (mental warfare defense)</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🎧 Morale Boosters</h3>
+                            <a href="#" target="_blank">Cancer Rebel Podcasts</a>
+                            <a href="#" target="_blank">Patient Warrior Stories</a>
+                            <a href="#" target="_blank">Meditation for Fighters</a>
+                            <p><em>Perfect for those long bathroom strategy sessions</em></p>
+                        </div>
+                    </div>
+
+                    <div class="fight-highlight" style="margin-top: 2rem;">
+                        <h4>Rebel Disclaimer:</h4>
+                        <p>These tools are shared from my personal arsenal. They're not medical recommendations - just weapons that have helped in my fight. Always coordinate with your medical team before deploying new strategies.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Community Page -->
+            <div id="community-page" class="content-section hidden">
+                <div class="page-content">
+                    <h1>Join Our LARS Community</h1>
+                    <p>Connect with others who understand your journey. Share experiences, find support, and discover that you're not alone.</p>
+
+                    <div class="fight-highlight">
+                        <h4>Why Join Our Community?</h4>
+                        <p><strong>Real Understanding:</strong> Connect with people who truly get what you're going through<br>
+                        <strong>Shared Wisdom:</strong> Learn from others' experiences and strategies<br>
+                        <strong>Emotional Support:</strong> Find encouragement on difficult days<br>
+                        <strong>Latest Updates:</strong> Stay informed about LARS research and resources<br>
+                        <strong>Safe Space:</strong> Share freely without judgment or medical advice</p>
+                    </div>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>🗣️ Discussion Forums</h3>
+                            <p>Join topic-based discussions about daily life with LARS</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Work and Career</li>
+                                <li>• Travel and Social Life</li>
+                                <li>• Family Relationships</li>
+                                <li>• Emotional Support</li>
+                                <li>• Product Reviews</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Join Discussions →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📖 Story Sharing</h3>
+                            <p>Share your experiences and read others' journeys</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Personal milestones</li>
+                                <li>• Challenging moments</li>
+                                <li>• Success strategies</li>
+                                <li>• Inspiration stories</li>
+                                <li>• Recovery updates</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Share Your Story →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🤝 Support Groups</h3>
+                            <p>Join virtual meetups and support circles</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Weekly check-ins</li>
+                                <li>• Peer mentorship</li>
+                                <li>• Topic-focused groups</li>
+                                <li>• New member welcome</li>
+                                <li>• Crisis support</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Find Your Group →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📊 Data Insights</h3>
+                            <p>Anonymous community data and patterns</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Community progress trends</li>
+                                <li>• Common trigger patterns</li>
+                                <li>• Helpful strategy rankings</li>
+                                <li>• Research participation</li>
+                                <li>• Outcome tracking</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">View Insights →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🎯 Expert Sessions</h3>
+                            <p>Learn from healthcare professionals and researchers</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Q&A with specialists</li>
+                                <li>• Research updates</li>
+                                <li>• Nutrition guidance</li>
+                                <li>• Mental health support</li>
+                                <li>• Latest treatments</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Join Sessions →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🔬 Research Participation</h3>
+                            <p>Contribute to LARS research and advancement</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Anonymous data sharing</li>
+                                <li>• Clinical trial opportunities</li>
+                                <li>• Survey participation</li>
+                                <li>• Pattern analysis</li>
+                                <li>• Future treatment development</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="fight-highlight" style="margin-top: 3rem;">
+                        <h4>Ready to Connect?</h4>
+                        <p>Join thousands of LARS patients supporting each other on this journey. Together, we're stronger.</p>
+                        <button class="fight-button" onclick="showSignup()" style="margin-top: 1rem;">SIGN UP NOW</button>
+                    </div>
+
+                    <div class="rebel-quote">
+                        "Alone we struggle, together we thrive. Join a community that understands your journey."
+                    </div>
+                </div>
+            </div>
+            <div id="about-page" class="content-section hidden">
+                <div class="page-content">
+                    <h1>Meet the Rebel</h1>
+                    
+                    <p>I never wanted to be a LARS rebel. I wanted to be the person who just "got better" after surgery and moved on with life. But LARS had other plans, and I had to make a choice: accept limitation or fight back.</p>
+
+                    <h2>Why I Fight</h2>
+                    <p>In December 2023, I had colorectal surgery. The cancer is gone (victory #1), but LARS moved in like an unwelcome roommate. For months, doctors kept saying "you'll need to learn to live with this" and "this is your new normal."</p>
+
+                    <p>Bull. Shit.</p>
+
+                    <p>I refuse to accept that a 30-something person should just surrender their social life, career ambitions, and daily freedom to bathroom schedules and emergency kits. So I declared war.</p>
+
+                    <h2>My Rebellion Strategy</h2>
+                    <p>Every day, I fight on multiple fronts:</p>
+                    <ul>
+                        <li><strong>Physical combat:</strong> Testing foods, timing, supplements, exercise</li>
+                        <li><strong>Mental warfare:</strong> Refusing to let LARS control my mindset</li>
+                        <li><strong>Social operations:</strong> Maintaining relationships and activities</li>
+                        <li><strong>Intelligence gathering:</strong> Reading research, tracking patterns</li>
+                        <li><strong>Community building:</strong> Connecting with fellow rebels</li>
+                    </ul>
+
+                    <h2>What This Rebellion Isn't</h2>
+                    <p>This isn't medical advice. I'm not a doctor - I'm a patient with an attitude problem who refuses to give up. Every strategy I share is my personal experience, not a prescription for anyone else.</p>
+
+                    <p>This also isn't toxic positivity. Some days, LARS wins. Some days, I cry in my car. Some days, I want to give up. I share those days too, because real rebellion includes real struggles.</p>
+
+                    <h2>What I've Learned</h2>
+                    <p>After a year of fighting, here's what I know for sure:</p>
+                    <ul>
+                        <li>Improvement IS possible (not cure, but real improvement)</li>
+                        <li>Small victories add up to big changes
