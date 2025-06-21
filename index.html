@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>I Refuse to Live with LARS - One Patient's Rebellion</title>
+    <title>LARS Won't Define Me - One Patient's Real Story</title>
     <style>
         * {
             margin: 0;
@@ -39,7 +39,15 @@
             z-index: 2;
         }
 
-        .rebel-title {
+        .neon-green {
+            color: #39ff14;
+            text-shadow: 0 0 10px #39ff14, 0 0 20px #39ff14, 0 0 30px #39ff14;
+        }
+
+        .neon-red {
+            color: #ff073a;
+            text-shadow: 0 0 10px #ff073a, 0 0 20px #ff073a, 0 0 30px #ff073a;
+        }
             font-size: 3.5rem;
             font-weight: bold;
             margin-bottom: 1rem;
@@ -106,6 +114,42 @@
             justify-content: center;
             gap: 2rem;
             list-style: none;
+            position: relative;
+        }
+
+        .auth-links {
+            position: absolute;
+            right: 0;
+            display: flex;
+            gap: 1rem;
+        }
+
+        .auth-links a {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.6rem 1.2rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .auth-links a:hover {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .auth-links a.signup {
+            background: linear-gradient(45deg, #39ff14, #32d812);
+            color: #333;
+        }
+
+        .auth-links a.signup:hover {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
         }
 
         .nav-links a {
@@ -363,7 +407,7 @@
             background: #f8f9fa;
         }
 
-        @media (max-width: 768px) {
+            @media (max-width: 768px) {
             .rebel-title {
                 font-size: 2.5rem;
             }
@@ -371,6 +415,12 @@
             .nav-links {
                 flex-direction: column;
                 gap: 0.5rem;
+            }
+
+            .auth-links {
+                position: static;
+                justify-content: center;
+                margin-top: 1rem;
             }
             
             .rebel-scale {
@@ -388,19 +438,19 @@
     <header>
         <div class="container">
             <div class="hero-content">
-                <h1 class="rebel-title">I REFUSE TO LIVE WITH LARS</h1>
-                <p class="rebel-subtitle">One patient's rebellion against accepting limitations</p>
+                <h1 class="rebel-title"><span class="neon-red">LARS</span> <span class="neon-green">Won't</span> Define Me</h1>
+                <p class="rebel-subtitle">My real story and how I used data science and AI to fight back</p>
                 
                 <div class="manifesto-box">
-                    <h3>My Rebellion Manifesto</h3>
-                    <p>✊ I refuse to just "accept" LARS as my new normal</p>
-                    <p>🔥 I'm fighting every day to get my life back</p>
-                    <p>💪 I share real strategies, honest failures, and hard-won victories</p>
-                    <p>🚀 I prove that improvement IS possible</p>
-                    <p>👥 I show other patients they don't have to settle either</p>
+                    <h3>My Personal Mission</h3>
+                    <p>✊ I share my real experiences living with LARS</p>
+                    <p>🔥 I document my daily fight to improve my quality of life</p>
+                    <p>💪 I share honest strategies, failures, and small victories</p>
+                    <p>🚀 I show that improvement is possible through personal experience</p>
+                    <p>👥 I connect with other patients on similar journeys</p>
                 </div>
                 
-                <button class="fight-button" onclick="showPage('blog')">JOIN THE FIGHT</button>
+                <button class="fight-button" onclick="showPage('community')">JOIN THE COMMUNITY</button>
             </div>
         </div>
     </header>
@@ -408,52 +458,55 @@
     <nav>
         <div class="container">
             <ul class="nav-links">
-                <li><a href="#" onclick="showPage('home')" class="active">The Rebellion</a></li>
-                <li><a href="#" onclick="showPage('blog')">My Fight</a></li>
-                <li><a href="#" onclick="showPage('tracker')">Battle Tracker</a></li>
-                <li><a href="#" onclick="showPage('resources')">Weapons & Tools</a></li>
-                <li><a href="#" onclick="showPage('about')">The Rebel</a></li>
+                <li><a href="#" onclick="showPage('home')" class="active">My Story</a></li>
+                <li><a href="#" onclick="showPage('blog')">Daily Journey</a></li>
+                <li><a href="#" onclick="showPage('tracker')">Personal Tracker</a></li>
+                <li><a href="#" onclick="showPage('resources')">Helpful Resources</a></li>
+                <li><a href="#" onclick="showPage('about')">About Me</a></li>
+                <li><a href="#" onclick="showPage('community')">Community</a></li>
+                
+                <div class="auth-links">
+                    <a href="#" onclick="showSignup()" class="signup">Sign Up</a>
+                    <a href="#" onclick="showLogin()" class="login">Log In</a>
+                </div>
             </ul>
         </div>
     </nav>
 
     <main>
         <div class="container">
-            <div class="disclaimer">
-                <strong>LEGAL DISCLAIMER:</strong> This is my personal rebellion story and experiences only. It is NOT medical advice and does not replace professional healthcare. Always consult your healthcare team for medical decisions. For emergencies, contact emergency services immediately.
-            </div>
 
             <!-- Home Page -->
             <div id="home-page" class="content-section">
                 <div class="page-content">
-                    <h1>Welcome to My Rebellion Against LARS</h1>
-                    <p>A year ago, doctors told me I had Low Anterior Resection Syndrome and that I'd need to "learn to live with it." Well, I call BS on that.</p>
+                    <h1>LARS Won't Define Me</h1>
+                    <p>A year ago, doctors told me I had Low Anterior Resection Syndrome and that I'd need to "learn to live with it." This is my personal story of how I'm working to improve my quality of life.</p>
                     
-                    <p>I refuse to accept that this is just "how it is now." I refuse to let LARS control my life, limit my dreams, or define my future. Every single day, I'm fighting to prove that improvement IS possible.</p>
+                    <p>I want to share my real experiences - the challenges, the small victories, and what I'm learning along the way. This is my personal journey, not medical advice.</p>
 
                     <div class="rebel-quote">
-                        "They told me to 'live with LARS.' I chose to fight it instead."
+                        "They told me LARS would be my new normal. I'm proving there's more to my story."
                     </div>
 
                     <div class="fight-highlight">
-                        <h4>What You'll Find in This Rebellion:</h4>
-                        <p><strong>Raw Truth:</strong> No sugar-coating the hard days<br>
-                        <strong>Real Strategies:</strong> What actually works in the trenches<br>
-                        <strong>Honest Failures:</strong> When my fights don't work<br>
-                        <strong>Small Victories:</strong> Proof that progress is possible<br>
-                        <strong>Rebel Tools:</strong> Resources that help me fight back</p>
+                        <h4>What You'll Find in My Story:</h4>
+                        <p><strong>Honest Experiences:</strong> Real daily life with LARS<br>
+                        <strong>Personal Strategies:</strong> What works for me (your experience may differ)<br>
+                        <strong>Learning Moments:</strong> When things don't go as planned<br>
+                        <strong>Small Victories:</strong> Progress I've personally experienced<br>
+                        <strong>Helpful Resources:</strong> Information that I've found useful</p>
                     </div>
 
-                    <h2>Latest from the Frontlines</h2>
+                    <h2>Latest from My Journey</h2>
                     <div class="rebel-post">
                         <div class="post-meta">
-                            <span class="rebel-badge">Day 365 Rebellion</span>
+                            <span class="rebel-badge">Day 365 Journey</span>
                             <span>December 20, 2024</span>
                         </div>
-                        <h3 class="post-title">One Year of Fighting: The Honest Battle Report</h3>
+                        <h3 class="post-title">One Year Later: My Personal Progress Report</h3>
                         <div class="post-content">
-                            <p>365 days ago, I declared war on LARS. Here's the brutal truth about Year One of my rebellion...</p>
-                            <p><em>Continue reading in <a href="#" onclick="showPage('blog')" style="color: #ff6b6b; font-weight: bold;">My Fight</a></em></p>
+                            <p>365 days ago, I started this journey. Here's my honest review of Year One living with LARS...</p>
+                            <p><em>Continue reading in <a href="#" onclick="showPage('blog')" style="color: #ff6b6b; font-weight: bold;">Daily Journey</a></em></p>
                         </div>
                     </div>
                 </div>
@@ -685,7 +738,112 @@
                 </div>
             </div>
 
-            <!-- About Page -->
+            <!-- Community Page -->
+            <div id="community-page" class="content-section hidden">
+                <div class="page-content">
+                    <h1>Join Our LARS Community</h1>
+                    <p>Connect with others who understand your journey. Share experiences, find support, and discover that you're not alone.</p>
+
+                    <div class="fight-highlight">
+                        <h4>Why Join Our Community?</h4>
+                        <p><strong>Real Understanding:</strong> Connect with people who truly get what you're going through<br>
+                        <strong>Shared Wisdom:</strong> Learn from others' experiences and strategies<br>
+                        <strong>Emotional Support:</strong> Find encouragement on difficult days<br>
+                        <strong>Latest Updates:</strong> Stay informed about LARS research and resources<br>
+                        <strong>Safe Space:</strong> Share freely without judgment or medical advice</p>
+                    </div>
+
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>🗣️ Discussion Forums</h3>
+                            <p>Join topic-based discussions about daily life with LARS</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Work and Career</li>
+                                <li>• Travel and Social Life</li>
+                                <li>• Family Relationships</li>
+                                <li>• Emotional Support</li>
+                                <li>• Product Reviews</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Join Discussions →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📖 Story Sharing</h3>
+                            <p>Share your experiences and read others' journeys</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Personal milestones</li>
+                                <li>• Challenging moments</li>
+                                <li>• Success strategies</li>
+                                <li>• Inspiration stories</li>
+                                <li>• Recovery updates</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Share Your Story →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🤝 Support Groups</h3>
+                            <p>Join virtual meetups and support circles</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Weekly check-ins</li>
+                                <li>• Peer mentorship</li>
+                                <li>• Topic-focused groups</li>
+                                <li>• New member welcome</li>
+                                <li>• Crisis support</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Find Your Group →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📊 Data Insights</h3>
+                            <p>Anonymous community data and patterns</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Community progress trends</li>
+                                <li>• Common trigger patterns</li>
+                                <li>• Helpful strategy rankings</li>
+                                <li>• Research participation</li>
+                                <li>• Outcome tracking</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">View Insights →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🎯 Expert Sessions</h3>
+                            <p>Learn from healthcare professionals and researchers</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Q&A with specialists</li>
+                                <li>• Research updates</li>
+                                <li>• Nutrition guidance</li>
+                                <li>• Mental health support</li>
+                                <li>• Latest treatments</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Join Sessions →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🔬 Research Participation</h3>
+                            <p>Contribute to LARS research and advancement</p>
+                            <ul style="list-style: none; padding: 0;">
+                                <li>• Anonymous data sharing</li>
+                                <li>• Clinical trial opportunities</li>
+                                <li>• Survey participation</li>
+                                <li>• Pattern analysis</li>
+                                <li>• Future treatment development</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()" style="color: #ff6b6b; font-weight: bold;">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <div class="fight-highlight" style="margin-top: 3rem;">
+                        <h4>Ready to Connect?</h4>
+                        <p>Join thousands of LARS patients supporting each other on this journey. Together, we're stronger.</p>
+                        <button class="fight-button" onclick="showSignup()" style="margin-top: 1rem;">SIGN UP NOW</button>
+                    </div>
+
+                    <div class="rebel-quote">
+                        "Alone we struggle, together we thrive. Join a community that understands your journey."
+                    </div>
+                </div>
+            </div>
             <div id="about-page" class="content-section hidden">
                 <div class="page-content">
                     <h1>Meet the Rebel</h1>
