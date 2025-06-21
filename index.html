@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LARS Won't Define Me - Home</title>
+    
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="rebel-title"><span class="neon-red">LARS</span> <span class="neon-green">Won't</span> Define Me</h1>
+                <p class="rebel-subtitle">My real story and how I used data science and AI to fight back</p>
+                
+                <div class="manifesto-box">
+                    <h3>My Personal Mission</h3>
+                    <p>✊ I share my real experiences living with LARS</p>
+                    <p>🔥 I document my daily journey to improve my quality of life</p>
+                    <p>💪 I share honest strategies, failures, and small victories</p>
+                    <p>🚀 I show that improvement is possible through data and determination</p>
+                    <p>👥 I connect with other patients on similar journeys</p>
+                </div>
+                
+                <a href="community.html" class="fight-button">JOIN THE COMMUNITY</a>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="nav-container">
+                <!-- Desktop Navigation -->
+                <ul class="nav-links">
+                    <li><a href="index.html" class="active">My Story</a></li>
+                    <li><a href="journal.html">Daily Journal</a></li>
+                    <li><a href="tracker.html">Personal Tracker</a></li>
+                    <li><a href="resources.html">Helpful Resources</a></li>
+                    <li><a href="about.html">About Me</a></li>
+                    <li><a href="community.html">Community</a></li>
+                </ul>
+
+                <!-- Hamburger Menu -->
+                <div class="hamburger" onclick="toggleMobileMenu()">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <!-- Auth Links -->
+                <div class="auth-links">
+                    <a href="#" onclick="showSignup()" class="signup">Sign Up</a>
+                    <a href="#" onclick="showLogin()" class="login">Log In</a>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation Menu -->
+            <ul class="nav-links mobile" id="mobileNav">
+                <li><a href="index.html" onclick="closeMobileMenu()">My Story</a></li>
+                <li><a href="journal.html" onclick="closeMobileMenu()">Daily Journal</a></li>
+                <li><a href="tracker.html" onclick="closeMobileMenu()">Personal Tracker</a></li>
+                <li><a href="resources.html" onclick="closeMobileMenu()">Helpful Resources</a></li>
+                <li><a href="about.html" onclick="closeMobileMenu()">About Me</a></li>
+                <li><a href="community.html" onclick="closeMobileMenu()">Community</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <div class="content-section">
+                <div class="page-content">
+                    <h1 class="page-accent">LARS Won't Define Me</h1>
+                    <p>A year ago, doctors told me I had Low Anterior Resection Syndrome and that I'd need to "learn to live with it." This is my personal story of how I'm working to improve my quality of life using data science and AI.</p>
+                    
+                    <p>I want to share my real experiences - the challenges, the small victories, and what I'm learning along the way. This is my personal journey, not medical advice.</p>
+
+                    <div class="rebel-quote">
+                        "They told me LARS would be my new normal. I'm proving there's more to my story."
+                    </div>
+
+                    <div class="home-highlight">
+                        <h4>What You'll Find in My Story:</h4>
+                        <p><strong>Honest Experiences:</strong> Real daily life with LARS, documented with data<br>
+                        <strong>Data-Driven Insights:</strong> What my personal analytics reveal about LARS patterns<br>
+                        <strong>AI Applications:</strong> How I built machine learning models for my condition<br>
+                        <strong>Small Victories:</strong> Progress measured and celebrated with real metrics<br>
+                        <strong>Community Building:</strong> Connecting patients through shared data and experiences</p>
+                    </div>
+
+                    <!-- Page Previews -->
+                    <h2 class="page-accent">Explore My Platform</h2>
+                    <div class="pages-grid">
+                        <a href="journal.html" class="page-preview journal">
+                            <h3>📖 Daily Journal</h3>
+                            <p>Real experiences from my LARS journey, documented with data science insights and machine learning discoveries.</p>
+                            <ul class="preview-features">
+                                <li>Year-one progress analysis with 67% symptom reduction</li>
+                                <li>AI model development achieving 78% prediction accuracy</li>
+                                <li>Technical deep-dives into pattern recognition</li>
+                                <li>Privacy-first data science methodologies</li>
+                            </ul>
+                        </a>
+
+                        <a href="tracker.html" class="page-preview tracker">
+                            <h3>📊 Personal Tracker</h3>
+                            <p>Data-driven tracking system with AI-powered insights and predictive analytics for LARS management.</p>
+                            <ul class="preview-features">
+                                <li>50+ variables tracked daily with machine learning analysis</li>
+                                <li>Predictive modeling for symptom forecasting</li>
+                                <li>Interactive dashboards and progress visualization</li>
+                                <li>Exportable reports for healthcare providers</li>
+                            </ul>
+                        </a>
+
+                        <a href="community.html" class="page-preview community">
+                            <h3>🤝 Community</h3>
+                            <p>Connect with fellow LARS patients in a supportive, data-driven community focused on shared learning.</p>
+                            <ul class="preview-features">
+                                <li>12 active members sharing 156 data points</li>
+                                <li>Privacy-protected community insights</li>
+                                <li>Peer mentorship and support groups</li>
+                                <li>Collaborative research participation</li>
+                            </ul>
+                        </a>
+
+                        <a href="resources.html" class="page-preview resources">
+                            <h3>📚 AI-Powered Resources</h3>
+                            <p>Curated resources enhanced with AI-generated research summaries and evidence-based Q&A.</p>
+                            <ul class="preview-features">
+                                <li>AI analysis of 200+ LARS research papers</li>
+                                <li>Automated research summaries with confidence scores</li>
+                                <li>Evidence-based Q&A with citations</li>
+                                <li>Tested products and tools with personal reviews</li>
+                            </ul>
+                        </a>
+
+                        <a href="about.html" class="page-preview about">
+                            <h3>👨‍💻 About Me</h3>
+                            <p>Learn about the data scientist behind this platform and the technical approach to LARS management.</p>
+                            <ul class="preview-features">
+                                <li>Machine learning expertise applied to healthcare</li>
+                                <li>Technical stack and methodology breakdown</li>
+                                <li>365+ days of systematic data collection</li>
+                                <li>Vision for democratizing health data science</li>
+                            </ul>
+                        </a>
+                    </div>
+
+                    <h2 class="page-accent">Latest from My Journey</h2>
+                    <div class="rebel-post">
+                        <div class="post-meta">
+                            <span class="rebel-badge">Day 365 Journey</span>
+                            <span>December 20, 2024</span>
+                        </div>
+                        <h3 class="post-title">One Year Later: My Personal Progress Report</h3>
+                        <div class="post-content">
+                            <p>365 days ago, I started this journey with LARS. Here's my honest review of Year One, backed by real data and analytics...</p>
+                            
+                            <h4 class="page-accent">Key Metrics After One Year:</h4>
+                            <ul>
+                                <li><strong>67% reduction</strong> in severe symptom episodes</li>
+                                <li><strong>78% accuracy</strong> in my personal AI prediction model</li>
+                                <li><strong>45% improvement</strong> in quality of life scores</li>
+                                <li><strong>3-4 episodes daily</strong> down from 8-12 initially</li>
+                                <li><strong>50+ variables</strong> tracked systematically every day</li>
+                            </ul>
+                            
+                            <p><em>Continue reading in <a href="journal.html" style="color: #ff6b6b; font-weight: bold;">Daily Journal</a></em></p>
+                        </div>
+                    </div>
+
+                    <div class="home-highlight" style="margin-top: 3rem;">
+                        <h4>Ready to Start Your Data-Driven Journey?</h4>
+                        <p>Join our community of LARS patients using technology and data to take control of their condition. Together, we're building the largest dataset of real patient experiences.</p>
+                        <a href="tracker.html" class="fight-button" style="margin-top: 1rem; text-decoration: none;">START TRACKING</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="disclaimer">
+        <strong>IMPORTANT LEGAL DISCLAIMER:</strong> I am not a medical professional. This website shares my personal experiences with LARS only and does not constitute medical practice, advice, diagnosis, or treatment in any jurisdiction. This is not a medical service. All content represents personal opinions and experiences only. Always consult qualified, licensed healthcare providers for medical decisions, advice, and treatment. For medical emergencies, contact emergency services immediately. Use of this website does not create a doctor-patient relationship.
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LARS Won't Define Me. Personal experiences shared for support and education only.</p>
+            <p>Not medical advice. Always consult healthcare providers for medical concerns.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle functions
+        function toggleMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (mobileNav && hamburger) {
+                mobileNav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+            }
+        }
+
+        function closeMobileMenu() {
+            const mobileNav = document.getElementById('mobileNav');
+            const hamburger = document.querySelector('.hamburger');
+            
+            if (mobileNav && hamburger) {
+                mobileNav.classList.remove('active');
+                hamburger.classList.remove('active');
+            }
+        }
+
+        // Auth functions
+        function showSignup() {
+            alert('Sign up functionality coming soon! This will allow you to save your tracking data and connect with other LARS patients.');
+        }
+
+        function showLogin() {
+            alert('Login functionality coming soon! This will give you access to your personal dashboard and community features.');
+        }
+
+        // Page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Homepage loaded successfully');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community - LARS Won't Define Me</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 50%, #fecfef 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Community Page Specific Colors - Orange & Coral Theme */
+        :root {
+            --primary-gradient: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            --accent-color: #ff6b35;
+            --secondary-color: #ff8c42;
+            --highlight-bg: linear-gradient(45deg, #ff6b35, #e55a2b);
+        }
+
+        body {
+            background: var(--primary-gradient);
+        }
+
+        /* Simple Back Navigation */
+        .back-nav {
+            background: rgba(255,255,255,0.95);
+            padding: 1rem 0;
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        .back-nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .back-button {
+            background: var(--accent-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .back-button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(255,107,53,0.4);
+        }
+
+        .page-title {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .page-accent {
+            color: var(--accent-color);
+        }
+
+        .content-section {
+            padding: 3rem 0;
+        }
+
+        .page-content {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .community-highlight {
+            background: var(--highlight-bg);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .fight-button {
+            background: linear-gradient(45deg, #ff6b35, #e55a2b);
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+        }
+
+        .fight-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+        }
+
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .resource-card {
+            background: linear-gradient(135deg, #fff7f0 0%, #ffe8d6 100%);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-top: 4px solid var(--accent-color);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .resource-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--accent-color);
+        }
+
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(255,107,53,0.2);
+        }
+
+        .resource-card h3 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .resource-card ul {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .resource-card li {
+            padding: 0.3rem 0;
+            color: #666;
+        }
+
+        .resource-card a {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: inline-block;
+            margin: 0.5rem 0;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .resource-card a:hover {
+            color: var(--secondary-color);
+            transform: translateX(5px);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .stat-card {
+            background: rgba(255,255,255,0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            border-top: 4px solid var(--accent-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
+            display: block;
+        }
+
+        .stat-label {
+            color: #666;
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .community-features {
+            background: rgba(255,255,255,0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+        }
+
+        .feature-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .feature-item {
+            background: linear-gradient(135deg, #fff 0%, #fff7f0 100%);
+            padding: 1.5rem;
+            border-radius: 15px;
+            border-left: 4px solid var(--accent-color);
+            transition: all 0.3s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255,107,53,0.2);
+        }
+
+        .feature-item h4 {
+            color: var(--accent-color);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonial {
+            background: linear-gradient(135deg, #fff7f0 0%, #ffe8d6 100%);
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            border-left: 5px solid var(--accent-color);
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--accent-color);
+            position: absolute;
+            top: 0;
+            left: 1rem;
+            opacity: 0.3;
+        }
+
+        .testimonial-text {
+            margin: 1rem 0;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .testimonial-author {
+            text-align: right;
+            color: var(--accent-color);
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .cta-section {
+            background: var(--highlight-bg);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .cta-section h3 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .disclaimer {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+            color: white;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 500;
+        }
+
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .back-nav .container {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .page-title {
+                font-size: 1.2rem;
+            }
+
+            .resources-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .feature-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Simple Back Navigation -->
+    <div class="back-nav">
+        <div class="container">
+            <a href="index.html" class="back-button">← Back to Home</a>
+            <h2 class="page-title">Community</h2>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="content-section">
+                <div class="page-content">
+                    <h1 class="page-accent">Join Our LARS Community</h1>
+                    <p>Connect with others who understand your journey. Share experiences, find support, and discover that you're not alone in this fight.</p>
+
+                    <div class="community-highlight">
+                        <h4>🤝 Why Join Our Community?</h4>
+                        <p><strong>Real Understanding:</strong> Connect with people who truly get what you're going through<br>
+                        <strong>Shared Wisdom:</strong> Learn from others' experiences and data-driven strategies<br>
+                        <strong>Emotional Support:</strong> Find encouragement on difficult days<br>
+                        <strong>Latest Research:</strong> Stay informed about LARS research and breakthrough treatments<br>
+                        <strong>Safe Space:</strong> Share freely without judgment - this is peer support, not medical advice</p>
+                    </div>
+
+                    <!-- Community Stats -->
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <span class="stat-number">12</span>
+                            <div class="stat-label">Active Members</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">156</span>
+                            <div class="stat-label">Data Points Shared</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">8</span>
+                            <div class="stat-label">Success Stories</div>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-number">24/7</span>
+                            <div class="stat-label">Community Support</div>
+                        </div>
+                    </div>
+
+                    <!-- Community Features -->
+                    <div class="community-features">
+                        <h3 class="page-accent">🌟 Community Features</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h4>🔒 Privacy-First Design</h4>
+                                <p>Share as much or as little as you want. All data is anonymized and you control your privacy settings completely.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>📊 Data-Driven Insights</h4>
+                                <p>Contribute to community patterns and learn from aggregated (anonymous) data insights from our member base.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>👥 Peer Mentorship</h4>
+                                <p>Connect with experienced community members who can guide you through your LARS journey with practical advice.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🎯 Goal Setting & Tracking</h4>
+                                <p>Set personal goals and celebrate milestones with community support and encouragement.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🔬 Research Participation</h4>
+                                <p>Optional participation in anonymized research studies to advance LARS treatment and understanding.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>💬 Real-Time Chat Support</h4>
+                                <p>Connect instantly with other members when you need support, advice, or just someone who understands.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Main Community Sections -->
+                    <div class="resources-grid">
+                        <div class="resource-card">
+                            <h3>🗣️ Discussion Forums</h3>
+                            <p>Topic-based discussions about daily life with LARS</p>
+                            <ul>
+                                <li>• Work & Career Management</li>
+                                <li>• Travel & Social Life</li>
+                                <li>• Family & Relationships</li>
+                                <li>• Emotional Support Circle</li>
+                                <li>• Product Reviews & Recommendations</li>
+                                <li>• Diet & Nutrition Strategies</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()">Join Discussions →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📖 Story Sharing</h3>
+                            <p>Share your experiences and read others' journeys</p>
+                            <ul>
+                                <li>• Personal milestone celebrations</li>
+                                <li>• Challenging moment support</li>
+                                <li>• Success strategy sharing</li>
+                                <li>• Inspiration and hope stories</li>
+                                <li>• Recovery progress updates</li>
+                                <li>• Data science breakthroughs</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()">Share Your Story →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🤝 Support Groups</h3>
+                            <p>Join virtual meetups and support circles</p>
+                            <ul>
+                                <li>• Weekly check-in meetings</li>
+                                <li>• Peer mentorship program</li>
+                                <li>• Topic-focused discussion groups</li>
+                                <li>• New member welcome sessions</li>
+                                <li>• Crisis support network</li>
+                                <li>• Regional local meetups</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()">Find Your Group →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>📊 Community Data Insights</h3>
+                            <p>Anonymous community data and pattern analysis</p>
+                            <ul>
+                                <li>• Community progress trends</li>
+                                <li>• Common trigger pattern analysis</li>
+                                <li>• Helpful strategy effectiveness rankings</li>
+                                <li>• Research participation opportunities</li>
+                                <li>• Outcome tracking and analysis</li>
+                                <li>• Predictive modeling insights</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()">View Insights →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🎯 Expert Sessions</h3>
+                            <p>Learn from healthcare professionals and researchers</p>
+                            <ul>
+                                <li>• Monthly Q&A with specialists</li>
+                                <li>• Latest research updates</li>
+                                <li>• Nutrition guidance sessions</li>
+                                <li>• Mental health support workshops</li>
+                                <li>• Latest treatment options</li>
+                                <li>• Technology and LARS management</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()">Join Sessions →</a>
+                        </div>
+
+                        <div class="resource-card">
+                            <h3>🔬 Research Participation</h3>
+                            <p>Contribute to LARS research and advancement</p>
+                            <ul>
+                                <li>• Anonymous data sharing programs</li>
+                                <li>• Clinical trial opportunity notifications</li>
+                                <li>• Survey participation</li>
+                                <li>• Pattern analysis contributions</li>
+                                <li>• Future treatment development input</li>
+                                <li>• Academic research collaboration</li>
+                            </ul>
+                            <a href="#" onclick="showSignup()">Learn More →</a>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials -->
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "This community changed my life. For the first time since my surgery, I felt understood. The data insights helped me identify triggers I never would have found on my own, and the emotional support got me through my darkest days."
+                        </div>
+                        <div class="testimonial-author">- Sarah M., Member since Day 1</div>
+                    </div>
+
+                    <div class="testimonial">
+                        <div class="testimonial-text">
+                            "As a data scientist myself, I was amazed by the sophisticated analytics this community provides while still maintaining complete privacy. The predictive insights have helped me manage my LARS better than any medical advice I've received."
+                        </div>
+                        <div class="testimonial-author">- Dr. Michael K., Data Scientist & LARS Patient</div>
+                    </div>
+
+                    <!-- Call to Action -->
+                    <div class="cta-section">
+                        <h3>Ready to Join Our Community?</h3>
+                        <p>Connect with dozens of LARS patients supporting each other on this journey. Together, we're building a patient-driven dataset and support network for LARS.</p>
+                        <button class="fight-button" onclick="showSignup()" style="margin-top: 1rem; background: white; color: #ff6b35;">SIGN UP NOW - IT'S FREE</button>
+                    </div>
+
+                    <!-- Community Guidelines -->
+                    <div class="community-features">
+                        <h3 class="page-accent">📋 Community Guidelines</h3>
+                        <div class="feature-list">
+                            <div class="feature-item">
+                                <h4>💬 Share Experiences, Not Medical Advice</h4>
+                                <p>We share personal experiences and data insights. Always consult healthcare professionals for medical decisions.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🤝 Be Kind and Supportive</h4>
+                                <p>We're all fighting similar battles. Kindness, empathy, and understanding are our core values.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>🔐 Respect Privacy</h4>
+                                <p>What's shared in the community stays in the community. Respect everyone's privacy choices.</p>
+                            </div>
+                            <div class="feature-item">
+                                <h4>📊 Quality Data Sharing</h4>
+                                <p>When sharing data insights, focus on accuracy and context. Help build our collective knowledge responsibly.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <div class="disclaimer">
+        <strong>IMPORTANT LEGAL DISCLAIMER:</strong> I am not a medical professional. This website shares my personal experiences with LARS only and does not constitute medical practice, advice, diagnosis, or treatment in any jurisdiction. This is not a medical service. All content represents personal opinions and experiences only. Always consult qualified, licensed healthcare providers for medical decisions, advice, and treatment. For medical emergencies, contact emergency services immediately. Use of this website does not create a doctor-patient relationship.
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 LARS Won't Define Me. Personal experiences shared for support and education only.</p>
+            <p>Not medical advice. Always consult healthcare providers for medical concerns.</p>
+        </div>
+    </footer>
+
+    <script>
+        function showSignup() {
+            alert('Sign up functionality coming soon! Join our waitlist to be notified when community features launch. This will include:\n\n• Private discussion forums\n• Data sharing and insights\n• Peer support groups\n• Expert Q&A sessions\n• Research participation opportunities\n\nAll features designed with privacy-first principles.');
+        }
+
+        // Page initialization
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Community page loaded successfully');
+        });
+    </script>
+</body>
+</html>
